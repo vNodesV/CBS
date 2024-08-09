@@ -50,8 +50,8 @@ eta_seconds=$((eta_seconds % 60))
 
 
 # echo "Catching Up: $catching_up"
-echo "Chain's Height: $current_height"
-echo "Your Height: $latest_height"
+echo "Chain's Height: $latest_height"
+echo "Your Height: $current_height"
 echo "Blocks to Catch Up: $block_difference"
 
 if [[ "$catching_up" == "true" ]]; then
