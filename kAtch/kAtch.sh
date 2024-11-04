@@ -43,9 +43,10 @@ eta_minutes=$(( (eta_seconds % 3600) / 60 ))
 eta_seconds=$((eta_seconds % 60))
 
 # Matrix-like output
+echo "### vKatch #############################"
 echo "Chain Name: $chain_name"
 echo "────────────────────────────"
-echo "External Chain Height: $latest_height"
+echo "Puplic Node Height: $latest_height"
 echo "Local Node Height: $current_height"
 echo "────────────────────────────"
 echo "Average Block Time (s): $avg_block_time"
@@ -53,3 +54,4 @@ echo "────────────────────────�
 echo "Blocks to Catch Up: $block_difference"
 echo "────────────────────────────"
 echo "ETA to Catch Up: ${eta_hours}h ${eta_minutes}m ${eta_seconds}s"
+echo "########################## vNodes[V] ###"
