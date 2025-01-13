@@ -68,6 +68,7 @@ while [[ $blocks_remaining -gt 0 ]]; do
   $upgrade_height $avg_block_time $blocks_remaining $eta_hours $eta_minutes $eta_seconds_remaining
 
 
+
   # Wait for one second before updating
   sleep 1
 done
