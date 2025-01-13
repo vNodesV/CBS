@@ -65,9 +65,10 @@ while [[ $blocks_remaining -gt 0 ]]; do
 
   # Display real-time countdown
 LC_NUMERIC=C
-avg_block_time_formatted=$(printf "%.2f" $avg_block_time)
+avg_block_time_formatted=$(printf "%.2f" "$avg_block_time")
+eta_seconds_formatted=$(printf "%.0f" "$eta_seconds")  # Round ETA seconds to nearest integer
 printf "\rTarget Height: %d | Current Block Time: %s secs | Blocks Remaining: %d | ETA: %02dh %02dm %02ds" \
-  $upgrade_height $avg_block_time_formatted $blocks_remaining $eta_hours $eta_minutes $eta_seconds_remaining
+  $upgrade_height "$avg_block_time_formatted" $blocks_remaining $eta_hours $eta_minutes $eta_seconds_formatted
 
 
   # Wait for one second before updating
