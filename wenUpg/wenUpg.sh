@@ -65,7 +65,7 @@ while [[ $blocks_remaining -gt 0 ]]; do
 
   # Display real-time countdown
 LC_NUMERIC=C
-printf "\rTarget Height: %d | Current Block Time: %.2f secs | Blocks Remaining: %d | ETA: %02dh %02dm %02ds" \
+printf "\rTarget Height: %d | Current Block Time: %f secs | Blocks Remaining: %d | ETA: %02dh %02dm %02ds" \
   $upgrade_height $(printf "%.2f" $avg_block_time) $blocks_remaining $eta_hours $eta_minutes $eta_seconds_remaining
 
   # Wait for one second before updating
