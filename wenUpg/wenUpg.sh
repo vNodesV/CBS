@@ -64,8 +64,11 @@ while [[ $blocks_remaining -gt 0 ]]; do
   eta_seconds_remaining=$(echo "$eta_seconds % 60" | bc)
 
   # Display real-time countdown
-  printf "Target Height: %d | Current Block Time: %.2f secs | Blocks Remaining: %d | ETA: %02dh %02dm %02ds" \
-  $upgrade_height $avg_block_time $blocks_remaining $eta_hours $eta_minutes $eta_seconds_remaining
+  LC_NUMERIC=C
+  printf "\rTarget Height: %d | Current Block Time: %.2f secs | Blocks Remaining: %d | ETA: %02dh %02dm %02ds" \
+  $upgrade_height $(printf "%.2f" $avg_block_time) $blocks_remaining $eta_hours $eta_minutes $eta_seconds_remaining
+
+
 
 
 
