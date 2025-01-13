@@ -64,8 +64,9 @@ while [[ $blocks_remaining -gt 0 ]]; do
   eta_seconds_remaining=$(echo "$eta_seconds % 60" | bc)
 
   # Display real-time countdown
-  printf "Blocks Remaining: %d | ETA: %02dh %02dm %02ds" \
-    $blocks_remaining $eta_hours $eta_minutes $eta_seconds_remaining
+  printf "Target Height: %d | Current Block Time: %.2f secs | Blocks Remaining: %d | ETA: %02dh %02dm %02ds" \
+  $upgrade_height $avg_block_time $blocks_remaining $eta_hours $eta_minutes $eta_seconds_remaining
+
 
   # Wait for one second before updating
   sleep 1
@@ -93,4 +94,14 @@ echo "Upgrade Height: $upgrade_height"
 echo "Current Block Height: $current_height"
 echo "────────────────────────────"
 echo "The upgrade height has been successfully confirmed."
+
+# Execute another script after confirmation
+SCRIPT_NAME="./post_upgrade_script.sh"  # Replace with the actual script name
+if [[ -x "$SCRIPT_NAME" ]]; then
+  echo "Executing post-upgrade script: $SCRIPT_NAME..."
+  bash "$SCRIPT_NAME"
+else
+  echo "Post-upgrade script not found or not executable: $SCRIPT_NAME"
+fi
+
 echo "########################## wenUpg[V] ###"
