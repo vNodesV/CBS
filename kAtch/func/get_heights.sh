@@ -1,5 +1,5 @@
 #!/bin/bash
-
+version="1.0.0"
 # Function to get the latest block height of the external network
 get_ext_node_latest_height() {
   curl -s $EXT_NODE_RPC/status | jq -r '.result.sync_info.latest_block_height' 2>/dev/null

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+version="1.0.0"
 # Determine the directory where the script is located
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
